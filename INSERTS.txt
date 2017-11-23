@@ -1,0 +1,429 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 23-Nov-2017 às 14:11
+-- Versão do servidor: 10.1.13-MariaDB
+-- PHP Version: 5.6.21
+a
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `catalagofilmes`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `ator`
+--
+
+CREATE TABLE `ator` (
+  `idAtor` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `idade` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `ator`
+--
+
+INSERT INTO `ator` (`idAtor`, `nome`, `idade`) VALUES
+(1, 'Nicolas Cage', '53'),
+(2, 'Brad Pitt', '53'),
+(3, 'Adam Sandler', '51'),
+(4, 'Julia Roberts', '50'),
+(5, 'Jim Carrey', '55'),
+(6, 'Will Smith', '49'),
+(7, 'Johnny Depp', '54'),
+(8, 'Angelina Jolie', '42'),
+(9, 'Meryl Streep', '68'),
+(10, 'Cameron Diaz', '45'),
+(11, 'Ben Stiller', '51'),
+(12, 'Jennifer Aniston', '48'),
+(13, 'Jennifer Lawrence', '27'),
+(14, 'Emma Stone', '29'),
+(15, 'Anne Hathaway', '34');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `diretor`
+--
+
+CREATE TABLE `diretor` (
+  `idDiretor` int(11) NOT NULL,
+  `nome` varchar(45) NOT NULL,
+  `idade` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `diretor`
+--
+
+INSERT INTO `diretor` (`idDiretor`, `nome`, `idade`) VALUES
+(1, 'David Fincher', '55'),
+(2, 'Martin Scorsese', '74'),
+(3, 'Christopher Nolan', '47'),
+(4, 'James Cameron', '63'),
+(5, 'Woody Allen', '81'),
+(6, 'Darren Aronofsky', '48'),
+(7, 'Clint Eastwood', '87'),
+(8, 'Wes Anderson', '48'),
+(9, 'Harvey Weinstein', '65'),
+(10, 'Steven Spielberg', '70'),
+(11, 'Quentin Tarantino', '54'),
+(12, 'Paul Thomas Anderson', '47'),
+(13, 'Lars von Trier', '61'),
+(14, 'Terrence Malick', '73'),
+(15, 'Roman Polanski', '84');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `filmes`
+--
+
+CREATE TABLE `filmes` (
+  `idFilmes` int(11) NOT NULL,
+  `titulo` varchar(45) NOT NULL,
+  `distribuidora` varchar(45) NOT NULL,
+  `duracao` varchar(45) NOT NULL,
+  `classificacao` varchar(45) NOT NULL,
+  `dataestreia` date NOT NULL,
+  `datasaida` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `filmes`
+--
+
+INSERT INTO `filmes` (`idFilmes`, `titulo`, `distribuidora`, `duracao`, `classificacao`, `dataestreia`, `datasaida`) VALUES
+(1, 'O Poderoso Chefao', 'Paramount Pictures', '178', '+10', '1972-07-07', '1972-09-07'),
+(2, 'O Magico de Oz', 'Warner Bros', '111', '+14', '1939-09-18', '1939-11-18'),
+(3, 'Cidadao Kane', 'Sporer, Mertz and Tremblay', '119', '+12', '1941-06-16', '1941-08-16'),
+(4, 'Um Sonho de Liberdade', 'Warner Bros', '140', '+12', '1995-01-25', '1995-03-25'),
+(5, 'Casablanca', 'Warner Bros', '112', '+14', '1942-12-07', '1943-02-07'),
+(6, 'E.T. O extraterrestre', 'Universal Pictures', '120', '+14', '2002-03-29', '2002-05-29'),
+(7, 'A Lista de Schindler', 'Universal Pictures', '195', '+16', '1993-12-31', '1994-02-28'),
+(8, 'Guerra nas Estrelas', 'Fox Film ', '121', '+18', '1978-01-30', '1978-03-30'),
+(9, 'De Volta para o Futuro', 'Universal Pictures', '116', '+18', '1985-12-25', '1986-02-25'),
+(10, 'O Sol é Para Todos', 'Universal Pictures', '129', '+10', '1963-02-11', '1963-04-11'),
+(11, 'E o Vento Levou...', 'Warner Bros', '238', '+10', '1940-01-01', '1940-03-01'),
+(12, 'Forrest Gump- O Contador de Histórias', 'Paramount', '140', '+12', '1994-12-07', '1995-02-07'),
+(13, 'Tubarão', 'Columbia', '124', '+14', '1975-07-07', '1975-09-07'),
+(14, 'Cantando na Chuva', 'Metro Goldwyn Mayer', '102', '+16', '1952-06-30', '1952-08-30'),
+(15, 'Laranja Mecânica', 'Warner Bros', '136', '+14', '1972-04-26', '1972-06-26'),
+(16, 'Curtindo a Vida Adoidado', 'Paramount', '102', '+16', '1986-12-19', '1987-02-19'),
+(17, 'Gênio Indomável', 'Terry, Mayert and Daugherty', '126', '+18', '1998-02-20', '1998-04-20'),
+(18, 'Os Suspeitos', 'Pagac-Fay', '106', '+14', '1996-04-19', '1996-06-19'),
+(19, 'Matrix', 'Warner Bros', '135', '+16', '1999-05-21', '1999-07-21'),
+(20, 'Dr. Fantastico', 'Columbia', '95', '+14', '1964-07-20', '1964-09-20'),
+(21, 'Apertem os Cintos... O Piloto Sumiu', 'Paramount', '85', '+12', '1980-12-26', '1981-02-26'),
+(22, 'Mary Poppins', 'Disney/ Buena Vista', '134', 'L', '1964-09-11', '1964-11-11'),
+(23, 'Amor, Sublime Amor', 'Fox Film', '151', '+10', '1961-12-25', '1962-02-25'),
+(24, 'Jurassic Park- Parque dos Dinossauros', 'Universal Pictures', '122', '+10', '1993-06-13', '1993-08-13'),
+(25, 'Rocky, Um Lutador', 'Fox Film', '119', '+16', '1977-01-07', '1977-03-07'),
+(26, 'Liga da Justiça', 'Warner Bros', '120 min', '+12', '2017-11-16', '2018-01-16'),
+(27, 'Thor: Ragnarok', 'Walt Disney Studios Motion Pictures/ Marvel S', '130 min', '+12', '2017-10-26', '2017-12-26'),
+(28, 'IT: A Coisa', 'Warner Bros', '135 min', '+16', '2017-09-07', '2017-11-07'),
+(29, 'Transformers: O Ultimo Cavaleiro', 'Paramount Pictures', '149 min', '+12', '2017-07-20', '2017-09-20'),
+(30, 'Homem Aranha: De Volta ao Lar', 'Sony Pictures Releasing/ Marvel Studios', '134 min', '+12', '2017-07-06', '2017-09-06'),
+(31, 'Mulher Maravilha', 'Warner Bros Pictures', '141 min', '+12', '2017-07-01', '2017-09-01'),
+(32, 'Velozes & Furiosos 8', 'Universal Pictures', '136 min', '+12', '2017-04-13', '2017-06-13'),
+(33, 'Depois Daquela Montanha', 'Fox Films', '167 min', '+12', '2017-10-05', '2017-12-05'),
+(34, 'Pantera Negra', 'Marvel Studios', '120 min', '+12', '2018-02-15', '2018-04-15');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `filmes_has_ator`
+--
+
+CREATE TABLE `filmes_has_ator` (
+  `Filmes_idFilmes` int(11) NOT NULL,
+  `Ator_idAtor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `filmes_has_ator`
+--
+
+INSERT INTO `filmes_has_ator` (`Filmes_idFilmes`, `Ator_idAtor`) VALUES
+(1, 1),
+(2, 5),
+(3, 6),
+(4, 7),
+(5, 8),
+(6, 9),
+(7, 10),
+(8, 11),
+(9, 12),
+(10, 13),
+(11, 14),
+(12, 15),
+(13, 2),
+(14, 1),
+(15, 3),
+(16, 5),
+(17, 4),
+(18, 6),
+(19, 8),
+(20, 7),
+(21, 9),
+(22, 12),
+(23, 10),
+(24, 11),
+(25, 13),
+(26, 12),
+(27, 10),
+(28, 9),
+(29, 8),
+(30, 1),
+(31, 2),
+(32, 5),
+(33, 8),
+(34, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `filmes_has_diretor`
+--
+
+CREATE TABLE `filmes_has_diretor` (
+  `Filmes_idFilmes` int(11) NOT NULL,
+  `Diretor_idDiretor` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `filmes_has_diretor`
+--
+
+INSERT INTO `filmes_has_diretor` (`Filmes_idFilmes`, `Diretor_idDiretor`) VALUES
+(1, 4),
+(2, 5),
+(3, 6),
+(4, 7),
+(5, 8),
+(6, 9),
+(7, 10),
+(8, 11),
+(9, 12),
+(10, 13),
+(11, 14),
+(12, 15),
+(13, 2),
+(14, 1),
+(15, 3),
+(16, 5),
+(17, 4),
+(18, 6),
+(19, 8),
+(20, 7),
+(21, 9),
+(22, 12),
+(23, 10),
+(24, 11),
+(25, 13),
+(26, 12),
+(27, 10),
+(28, 9),
+(29, 8),
+(30, 1),
+(31, 2),
+(32, 5),
+(33, 8),
+(34, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `filmes_has_genero`
+--
+
+CREATE TABLE `filmes_has_genero` (
+  `Filmes_idFilmes` int(11) NOT NULL,
+  `Genero_idGenero` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `filmes_has_genero`
+--
+
+INSERT INTO `filmes_has_genero` (`Filmes_idFilmes`, `Genero_idGenero`) VALUES
+(1, 1),
+(2, 8),
+(3, 13),
+(4, 14),
+(5, 6),
+(6, 5),
+(7, 1),
+(8, 7),
+(9, 7),
+(10, 13),
+(11, 6),
+(12, 1),
+(13, 12),
+(14, 11),
+(15, 14),
+(16, 1),
+(17, 1),
+(18, 2),
+(19, 5),
+(20, 10),
+(21, 4),
+(22, 11),
+(23, 14),
+(24, 3),
+(25, 1),
+(26, 4),
+(27, 4),
+(28, 12),
+(29, 4),
+(30, 4),
+(31, 4),
+(32, 4),
+(33, 1),
+(34, 4);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `genero`
+--
+
+CREATE TABLE `genero` (
+  `idGenero` int(11) NOT NULL,
+  `descricao` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `genero`
+--
+
+INSERT INTO `genero` (`idGenero`, `descricao`) VALUES
+(1, 'Drama'),
+(2, 'Thriller'),
+(3, 'Aventura'),
+(4, 'Acao'),
+(5, 'Fantasia'),
+(6, 'Romance'),
+(7, 'Ficcao Cientifica'),
+(8, 'Animacao'),
+(9, 'Comedia Romantica'),
+(10, 'Comedia'),
+(11, 'Musical'),
+(12, 'Suspense'),
+(13, 'Misterio'),
+(14, 'Policial'),
+(15, 'Guerra');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `ator`
+--
+ALTER TABLE `ator`
+  ADD PRIMARY KEY (`idAtor`);
+
+--
+-- Indexes for table `diretor`
+--
+ALTER TABLE `diretor`
+  ADD PRIMARY KEY (`idDiretor`);
+
+--
+-- Indexes for table `filmes`
+--
+ALTER TABLE `filmes`
+  ADD PRIMARY KEY (`idFilmes`);
+
+--
+-- Indexes for table `filmes_has_ator`
+--
+ALTER TABLE `filmes_has_ator`
+  ADD PRIMARY KEY (`Filmes_idFilmes`,`Ator_idAtor`),
+  ADD KEY `fk_Filmes_has_Ator_Ator1_idx` (`Ator_idAtor`),
+  ADD KEY `fk_Filmes_has_Ator_Filmes1_idx` (`Filmes_idFilmes`);
+
+--
+-- Indexes for table `filmes_has_diretor`
+--
+ALTER TABLE `filmes_has_diretor`
+  ADD PRIMARY KEY (`Filmes_idFilmes`,`Diretor_idDiretor`),
+  ADD KEY `fk_Filmes_has_Diretor_Diretor1_idx` (`Diretor_idDiretor`),
+  ADD KEY `fk_Filmes_has_Diretor_Filmes_idx` (`Filmes_idFilmes`);
+
+--
+-- Indexes for table `filmes_has_genero`
+--
+ALTER TABLE `filmes_has_genero`
+  ADD PRIMARY KEY (`Filmes_idFilmes`,`Genero_idGenero`),
+  ADD KEY `fk_Filmes_has_Genero_Genero1_idx` (`Genero_idGenero`),
+  ADD KEY `fk_Filmes_has_Genero_Filmes1_idx` (`Filmes_idFilmes`);
+
+--
+-- Indexes for table `genero`
+--
+ALTER TABLE `genero`
+  ADD PRIMARY KEY (`idGenero`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `ator`
+--
+ALTER TABLE `ator`
+  MODIFY `idAtor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `diretor`
+--
+ALTER TABLE `diretor`
+  MODIFY `idDiretor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+--
+-- AUTO_INCREMENT for table `filmes`
+--
+ALTER TABLE `filmes`
+  MODIFY `idFilmes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Limitadores para a tabela `filmes_has_ator`
+--
+ALTER TABLE `filmes_has_ator`
+  ADD CONSTRAINT `fk_Filmes_has_Ator_Ator1` FOREIGN KEY (`Ator_idAtor`) REFERENCES `ator` (`idAtor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Filmes_has_Ator_Filmes1` FOREIGN KEY (`Filmes_idFilmes`) REFERENCES `filmes` (`idFilmes`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `filmes_has_diretor`
+--
+ALTER TABLE `filmes_has_diretor`
+  ADD CONSTRAINT `fk_Filmes_has_Diretor_Diretor1` FOREIGN KEY (`Diretor_idDiretor`) REFERENCES `diretor` (`idDiretor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Filmes_has_Diretor_Filmes` FOREIGN KEY (`Filmes_idFilmes`) REFERENCES `filmes` (`idFilmes`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Limitadores para a tabela `filmes_has_genero`
+--
+ALTER TABLE `filmes_has_genero`
+  ADD CONSTRAINT `fk_Filmes_has_Genero_Filmes1` FOREIGN KEY (`Filmes_idFilmes`) REFERENCES `filmes` (`idFilmes`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Filmes_has_Genero_Genero1` FOREIGN KEY (`Genero_idGenero`) REFERENCES `genero` (`idGenero`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
